@@ -1,13 +1,37 @@
 {
-  "itemName": "leafshell",
-  "inventoryIcon": "leafshellicon.png",
-  "category": "food",
-  "rarity": "Common",
-  "price": 5,
+	"itemName": "leafshell",
+	"inventoryIcon": "leafshellicon.png",
+	"category": "food",
+	"rarity": "Common",
+	"price": 5,
 
-  "tooltipKind": "food",
-  "description": "^cyan;+^white;4 ^cyan;Defense ^gray;(^white;2m^gray;)^reset;",
-  "shortdescription": "Leafshell",
+	"tooltipKind": "food",
+	"description": "^yellow;^reset;^cyan;+4 ^cyan;Defense^reset;: 3m",
+	"shortdescription": "Leafshell",
+	"effects": [
+		[{
+			"effect": "defense3",
+			"duration": 180
+		}]
+	],
 
-  "effects": [["defense3"]]
+	"blockingEffects": [
+		"defense1",
+		"defense2",
+		"defense4",
+		"defense5",
+		"defense6",
+		"defenseboost10",
+		"defenseboost20",
+		"defenseboost30",
+		"defenseboost60",
+		"defenseboost90",
+		"defenseboost120",
+		"defenseboost180",
+		"defenseboost210",
+		"defenseboost240",
+		"defenseboost270",
+		"defenseboost300",
+		"defenseboostgreg"
+	]
 }

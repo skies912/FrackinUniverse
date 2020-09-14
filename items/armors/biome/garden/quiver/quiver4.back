@@ -6,7 +6,7 @@
   "shortdescription" : "Amazing Quiver",
   "description": "+^cyan;25^reset;% damage (Bows)
 -^green;0.25s^reset; Draw Time (Bows)
-+^green;12^reset; Airborne Damage (Bows)
++^green;12%^reset; Airborne Damage (Bows)
 -^green;7^reset; Energy Per Shot (Bows)",
   "category" : "enviroProtectionPack",
   "tooltipKind" : "baseaugment",
@@ -29,7 +29,7 @@
     },
     {
       "stat" : "bowAirBonus",
-      "amount" : 12
+      "amount" : 0.12
     },
     {
       "stat" : "bowEnergyBonus",

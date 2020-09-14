@@ -9,13 +9,13 @@
   "description" : "A primitive bone bow, almost too stiff to draw.",
   "shortdescription" : "Bone Bow",
   "twoHanded" : true,
-  "itemTags" : ["weapon", "ranged", "bow", "upgradeableWeapon"],
+  "itemTags" : ["weapon", "ranged", "bow", "upgradeableWeapon","bone"],
 
   "radioMessagesOnPickup" : [ "pickupbow" ],
 
   "level" : 1,
 
-  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animation" : "/items/active/weapons/bow/fubow.animation",
   "animationParts" : {
     "bow" : "bonebow.png"
   },

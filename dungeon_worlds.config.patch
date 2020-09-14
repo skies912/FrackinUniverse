@@ -1,5 +1,39 @@
 [
   {
+    "op": "replace",
+    "path": "/lunarbase/musicTrack",
+    "value": "/sfx/environmental/moon_surface.ogg"
+  }, 
+  {
+    "op": "replace",
+    "path": "/lunarbase/dungeonBaseHeight",
+    "value": 500
+  },
+  {
+    "op": "replace",
+    "path": "/lunarbase/worldSize",
+    "value": [850, 950]
+  },   
+  {
+    "op": "replace",
+    "path": "/lunarbase/threatLevel",
+    "value": 3
+  },
+  {
+    "op": "replace",
+    "path": "/lunarbase/musicTrack",
+    "value": "/sfx/environmental/moon_surface.ogg"
+  },
+  {
+    "op": "remove",
+    "path": "/lunarbase/environmentStatusEffects/0"
+  },
+  {
+    "op": "replace",
+    "path": "/cultistmission1/musicTrack",
+    "value": "/music/cybersphere_industrial.ogg"
+  }, 
+  {
     "op" : "add",
     "path" : "/nightfort",
     "value" : {
@@ -61,7 +95,7 @@
       "ambientLightLevel":[15,25,10],
       "biome" : "shoggothbiome",
       "musicTrack" : "/sfx/ambiance/shoggoth.ogg",
-      "environmentStatusEffects" : [ "ffbiomecold4" ]
+      "environmentStatusEffects" : [ "ffbiomecold3" ]
       }
 },
 {
@@ -80,7 +114,7 @@
       "ambientLightLevel":[15,25,10],
       "weatherPool" : [[0.60, "freezestorm"],[0.15, "freezestormlesser"],[0.15, "cosmicblast"],[0.10, "darkblast"]],           
       "biome" : "shoggothbiome",
-      "environmentStatusEffects" : [ "ffbiomecold4" ]}
+      "environmentStatusEffects" : [ "ffbiomecold3" ]}
 },
 {
     "op": "add",

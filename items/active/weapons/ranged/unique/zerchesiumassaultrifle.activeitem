@@ -11,13 +11,14 @@
   "level" : 4,
   "tooltipKind" : "gun2",
   "weaponType" : "Energy",
-  "itemTags" : ["weapon","ranged","assaultrifle", "energy", "upgradeableWeapon"],
+  "itemTags" : ["weapon","ranged","assaultrifle", "energy", "upgradeableWeapon","zerchesium"],
   "twoHanded" : true,
   
   "animation" : "/items/active/weapons/ranged/unique/fugun.animation",
   "animationParts" : {
     "butt" : "",
     "middle" : "zerchesiumassaultrifle.png",
+	"middlefullbright":"",
     "barrel" : "",
     "muzzleFlash" : "/animations/muzzleflash/muzzleflash2.png"
   },

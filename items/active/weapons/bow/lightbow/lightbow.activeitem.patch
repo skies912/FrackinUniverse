@@ -2,7 +2,7 @@
 {"op": "replace","path": "/tooltipKind","value": "bow2"},
 {"op": "add","path": "/critChance","value": 6},
 {"op": "add","path": "/critBonus","value": 3},
-{"op": "add","path": "/elementalType","value": "electric"},
+{"op": "add","path": "/elementalType","value": "cosmic"},
   {
     "op": "add",
     "path": "/primaryAbility",
@@ -17,6 +17,11 @@
       "powerProjectileType": "rngcosmicpowerarrow"      
     }
   },
+  {
+    "op": "replace",
+    "path": "/animation",
+    "value": "/items/active/weapons/bow/fubow.animation"
+  }, 
   {
     "op": "add",
     "path": "/primaryAbility/projectileParameters",
@@ -53,7 +58,7 @@
     "op": "add",
     "path": "/altAbility",
     "value": {
-      "name" : "Jolt",
+      "name" : "Lightning Bolt",
       "projectileType": "ffteslasmall",
       "powerProjectileType": "ffteslasmall",
       "projectileParameters": {

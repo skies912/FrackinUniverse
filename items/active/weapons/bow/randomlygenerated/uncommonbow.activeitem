@@ -11,6 +11,7 @@
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","bow","upgradeableWeapon"],
   "level" : 1,
+  "fixedLevel" : false,
 
   "radioMessagesOnPickup" : [ "pickupbow" ],
   
@@ -152,7 +153,7 @@
       "rngbows_shotbowarrow",
       "rngbows_backpedal",
       "rngbows_aimprediction",
-      //"rngbows_arrowrain",
+      "rngbows_arrowrain",
       "rngbows_backpedal3",
       "rngbows_flip",
       "rngbows_volatilearrow",

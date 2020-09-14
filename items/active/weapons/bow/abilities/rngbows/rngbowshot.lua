@@ -1,5 +1,6 @@
 --Modified bow shot ability that drains energy while drawing and holding, with configurable drain rates. Has an animation state for when arrows have been loosed
 require "/scripts/vec2.lua"
+require "/items/active/weapons/crits.lua"
 
 -- Bow primary ability
 NebRNGBowShot = WeaponAbility:new()
@@ -12,7 +13,7 @@ function NebRNGBowShot:init()
   self.arrowVariant = config.getParameter("animationParts")
 
   self.drawTimer = 0
-  self.bonusSpeed = status.stat("bowDrawTimeBonus",0)
+  self.bonusSpeed = status.stat("bowDrawTimeBonus")
   self.drawTime = self.drawTime - self.bonusSpeed
   
   animator.setAnimationState("bow", "idle")
@@ -226,7 +227,7 @@ function NebRNGBowShot:currentProjectileParameters()
   end
   
   --Bonus damage calculation for quiver users
-  local damageBonus = 1.0  + status.stat("bowDrawTimeBonus",0) --adds the bow draw bonus back to damage to keep it on par, otherwise we lose damage
+  local damageBonus = 1.0  + status.stat("bowDrawTimeBonus") --adds the bow draw bonus back to damage to keep it on par, otherwise we lose damage
   if self.useQuiverDamageBonus == true and status.statPositive("nebsrngbowdamagebonus") then
 		damageBonus = status.stat("nebsrngbowdamagebonus")
   end
@@ -242,8 +243,8 @@ function NebRNGBowShot:currentProjectileParameters()
 		* damageBonus
 		* (mcontroller.onGround() and 1 or (mcontroller.liquidMovement() and 1 or mcontroller.zeroG() and 1 or (self.airborneBonus + status.stat("bowAirBonus"))))
 		/ (self.projectileCount or 1)
+  projectileParameters.power = Crits.setCritDamage(self,projectileParameters.power)
   projectileParameters.powerMultiplier = activeItem.ownerPowerMultiplier()
-
   return projectileParameters
 end
 

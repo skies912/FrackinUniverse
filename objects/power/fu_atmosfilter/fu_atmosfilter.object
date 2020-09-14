@@ -1,6 +1,6 @@
 {
   "objectName" : "fu_atmosfilter",
-  "rarity" : "legendary",
+  "rarity" : "rare",
   "colonyTags" : [ "science" ],
   "description" : "Filters most environment effects. Can broadcast augment effects to radius. Requires 60W of power.",
   "shortdescription" : "^cyan;Atmospheric Filter^white;",
@@ -41,7 +41,7 @@
     }
   ],
 
-  "scripts" : [ "/scripts/power.lua","/objects/power/fu_atmosfilter/fu_atmosfilter.lua" ],
+  "scripts" : [ "/scripts/fupower.lua","/objects/power/fu_atmosfilter/fu_atmosfilter.lua" ],
   "scriptDelta" : 60,
   
   "objectType" : "container",

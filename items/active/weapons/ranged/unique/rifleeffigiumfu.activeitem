@@ -10,7 +10,7 @@
   "level" : 5,
   "tooltipKind" : "gun2",
   "weaponType" : "Sniper Rifle",
-  "itemTags" : ["weapon","ranged","sniperrifle","upgradeableWeapon"],
+  "itemTags" : ["weapon","ranged","sniperrifle","upgradeableWeapon","effigium","shadow"],
   "twoHanded" : true,
 
   "animation" : "/items/active/weapons/ranged/gun.animation",
@@ -45,9 +45,9 @@
   "primaryAbility" : {
     "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
     "class" : "GunFire",
-    "fireTime" : 2,
-    "baseDps" : 5.7,
-    "energyUsage" : 40.0,
+    "fireTime" : 1.8,
+    "baseDps" : 8,
+    "energyUsage" : 25.5,
     "inaccuracy" : 0,
 
     "projectileCount" : 1,

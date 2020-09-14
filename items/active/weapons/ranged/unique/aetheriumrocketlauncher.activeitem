@@ -9,7 +9,7 @@
   "level" : 7,
   "tooltipKind" : "gun2",
   "category" : "rocketLauncher",
-  "itemTags" : ["weapon","ranged","rocketlauncher","upgradeableWeapon", "upgradeableWeapon"],
+  "itemTags" : ["weapon","ranged","rocketlauncher","upgradeableWeapon", "upgradeableWeapon","aetherium","cosmic","explosive"],
   "twoHanded" : true,
 
   "animation" : "/items/active/weapons/ranged/unique/fugun.animation",
@@ -17,6 +17,7 @@
     "butt" : "",
     "middle" : "aetheriumrocketlauncher.png",
     "middlefullbright" : "aetheriumrocketlauncherfullbright.png",
+    "barrel" : "",
     "muzzleFlash" : "/animations/muzzleflash/matterblastlightblue.png"
   },
   "animationCustom" : {
@@ -53,7 +54,7 @@
 
   "scripts" : ["/items/active/weapons/ranged/gun.lua"],
 
-  "elementalType" : "cosmic",
+  "elementalType" : "aether",
 
   "primaryAbility" : {
     "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
@@ -70,8 +71,7 @@
     "projectileType" : "aethermissile",
     "projectileParameters" : { 
       "speed" : 40,
-      "knockback" : 8,
-      "damageSourceKind" : "cosmic"
+      "knockback" : 8
     },    
 
     "stances" : {

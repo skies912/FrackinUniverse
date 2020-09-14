@@ -33,8 +33,8 @@
 
   "primaryAbilityType" : "battlebladecombo",
   "primaryAbility" : {
-    "fireTime" : 0.85,
-    "baseDps" : 7.0,
+    "fireTime" : 0.89,
+    "baseDps" : 6.45,
     "damageConfig" : {
       "damageSourceKind" : "ice"
     }

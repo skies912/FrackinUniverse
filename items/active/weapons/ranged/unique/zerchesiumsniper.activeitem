@@ -12,13 +12,14 @@
   "level" : 4,
   "tooltipKind" : "gun2",
   "weaponType" : "Sniper Rifle",
-  "itemTags" : ["weapon","ranged","sniperrifle", "energy", "upgradeableWeapon"],
+  "itemTags" : ["weapon","ranged","sniperrifle", "energy", "upgradeableWeapon","zerchesium"],
   "twoHanded" : true,
   
   "animation" : "/items/active/weapons/ranged/unique/fugun.animation",
   "animationParts" : {
     "butt" : "",
     "middle" : "zerchesiumsniper.png",
+	"middlefullbright":"",
     "barrel" : "",
     "muzzleFlash" : "/animations/muzzleflash/muzzleflash2.png"
   },

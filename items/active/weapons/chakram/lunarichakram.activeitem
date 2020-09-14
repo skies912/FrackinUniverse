@@ -5,7 +5,7 @@
   "maxStack" : 1,
   "rarity" : "common",
   "category" : "chakram",
-  "description" : "Luanri power of crystalline destruction.",
+  "description" : "Harnessed power of crystalline destruction.",
   "shortdescription" : "Lunari Chakram",
   "tooltipKind" : "chakram",
   "twoHanded" : false,
@@ -80,5 +80,5 @@
       "allowFlip" : true
     }
   }, 
-  "builder" : "/items/buildscripts/buildchakram.lua"
+  "builder" : "/items/buildscripts/fubuildchakram.lua"
 }

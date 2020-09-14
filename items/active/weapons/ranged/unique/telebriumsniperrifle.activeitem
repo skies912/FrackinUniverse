@@ -11,7 +11,7 @@
   "level" : 2,
   "tooltipKind" : "gun2",
   "weaponType" : "sniperRifle",
-  "itemTags" : ["weapon","ranged","upgradeableWeapon", "sniperrifle"],
+  "itemTags" : ["weapon","ranged","upgradeableWeapon", "sniperrifle","telebrium"],
   "twoHanded" : true,
 
   "animation" : "/items/active/weapons/ranged/unique/fugun.animation",
@@ -48,7 +48,7 @@
   },
 
   "baseOffset" : [1.7, 0.1],
-  "muzzleOffset" : [1.9, 0.325],
+  "muzzleOffset" : [3.5, 0.1],
   "scripts" : ["/items/active/weapons/ranged/gun.lua"],
 
   "elementalType" : "poison",
@@ -57,8 +57,8 @@
     "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
     "class" : "GunFire",
     "fireTime" : 2,
-    "baseDps" : 8,
-    "energyUsage" : 50.0,
+    "baseDps" : 7.75,
+    "energyUsage" : 30.5,
     "inaccuracy" : 0,
     "projectileCount" : 1,
     "fireType" : "auto",

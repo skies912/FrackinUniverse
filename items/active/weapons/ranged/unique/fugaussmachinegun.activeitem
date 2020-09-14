@@ -12,7 +12,7 @@
   "level" : 4,
   "tooltipKind" : "gun2",
   "weaponType" : "Coilgun",
-  "itemTags" : ["weapon","ranged","assaultrifle", "upgradeableWeapon"],
+  "itemTags" : ["weapon","ranged","assaultrifle", "upgradeableWeapon","gauss"],
   "twoHanded" : true,
 
   "animation" : "/items/active/weapons/ranged/unique/fugun.animation",
@@ -116,7 +116,7 @@
   "isAmmoBased" : 1,
   "magazineSize" : 50,
   "reloadTime" : 3.7,
-  "isAssaulTRifle" : 1,
+  "isAssaultRifle" : 1,
   
   "altAbilityType" : "explosiveburst",
 

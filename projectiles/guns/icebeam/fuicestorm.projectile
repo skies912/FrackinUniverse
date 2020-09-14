@@ -14,8 +14,7 @@
   "piercing" : true,
   "orientationLocked" : true,
   "flippable" : false,
-  "damageKind" : "default",
-  "damageType" : "IgnoresDef",
+  "damageKind" : "ice",
   "scripts" : ["/projectiles/activeitems/staff/crystalstorm/crystalstorm.lua"],
   "scriptDelta" : 1
 }

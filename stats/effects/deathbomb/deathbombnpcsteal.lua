@@ -1,10 +1,12 @@
 require "/scripts/util.lua"
 
 function init()
-	if (status.resourceMax("health") < config.getParameter("minMaxHealth", 0)) then
+	if (status.resourceMax("health") < config.getParameter("minMaxHealth", 0)) or (not world.entityExists(entity.id())) or (world.entityType(entity.id())~= "npc") then
 		effect.expire()
 	end
+
 	self.blinkTimer = 0
+	if not blocker then blocker=config.getParameter("blocker","deathbombnpcsteal") end
 end
 
 function update(dt)
@@ -17,7 +19,7 @@ function update(dt)
 		effect.setParentDirectives("")
 	end
 
-	if not status.resourcePositive("health") and status.resourceMax("health") >= config.getParameter("minMaxHealth", 0) then
+	if (status.resourcePercentage("health") <= 0.05) and status.resourceMax("health") >= config.getParameter("minMaxHealth", 0) then
 		explode()
 	end
 end
@@ -27,10 +29,8 @@ function uninit()
 end
 
 function explode()
-	if world.entityType(entity.id()) ~= "npc" then
-		self.exploded=true
-	end
-	if not self.exploded then
+	if not blocker then blocker=config.getParameter("blocker","deathbombnpcsteal") end
+	if not self.exploded and not status.statPositive("deathbombDud") and not status.statPositive(blocker) then
 		local chance=config.getParameter("chance",100)
 		local dropPool={}
 		local slotList={"head","headCosmetic","chest","chestCosmetic","legs","legsCosmetic","back","backCosmetic","primary","alt"}
@@ -64,7 +64,10 @@ function explode()
 				end
 			end
 		end
-		
+		status.addPersistentEffect(blocker,{stat=blocker,amount=1})
 		self.exploded = true
+		if status.isResource("stunned") then
+			status.setResource("stunned",0)
+		end
 	end
 end

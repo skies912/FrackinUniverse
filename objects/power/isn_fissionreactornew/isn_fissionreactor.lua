@@ -1,5 +1,5 @@
 require "/scripts/kheAA/transferUtil.lua"
-require "/scripts/power.lua"
+require "/scripts/fupower.lua"
 require "/scripts/effectUtil.lua"
 
 function init()
@@ -34,7 +34,18 @@ function init()
     storage.fuels = config.getParameter("fuels")
 	storage.radiation = storage.radiation or 0
 	storage.active = true
+	storage.active2 = (not object.isInputNodeConnected(0)) or object.getInputNodeLevel(0)
 end
+
+function onInputNodeChange(args)
+	storage.active2 = (not object.isInputNodeConnected(0)) or object.getInputNodeLevel(0)
+end
+
+function onNodeConnectionChange(args)
+	storage.active2 = (not object.isInputNodeConnected(0)) or object.getInputNodeLevel(0)
+end
+
+
 
 function update(dt)
 	if not deltaTime or deltaTime > 1 then
@@ -51,16 +62,19 @@ function update(dt)
         end
 	end
 
-	if not storage.active then
+	if (not storage.active) or (not storage.active2) then
 		storage.radiation = math.max(storage.radiation - dt*5,0)
 		animator.setAnimationState("screen", "off")
+		power.setPower(0)
 		power.update(dt)
 		return
 	end
 
-    for i=0,3 do
-        if isn_slotDecayCheck(i) then isn_doSlotDecay(i) end
-    end
+	if storage.active2 then
+		for i=0,3 do
+			if isn_slotDecayCheck(i) then isn_doSlotDecay(i) end
+		end
+	end
 
 	local powerout = isn_getCurrentPowerOutput()
 	power.setPower(powerout)

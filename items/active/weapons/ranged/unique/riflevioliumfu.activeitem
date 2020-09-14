@@ -10,7 +10,7 @@
   "level" : 5,
   "tooltipKind" : "gun2",
   "weaponType" : "Sniper Rifle",
-  "itemTags" : ["weapon","ranged","sniperrifle","upgradeableWeapon"],
+  "itemTags" : ["weapon","ranged","sniperrifle","upgradeableWeapon","violium"],
   "twoHanded" : true,
 
   "animation" : "/items/active/weapons/ranged/gun.animation",
@@ -45,9 +45,9 @@
   "primaryAbility" : {
     "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
     "class" : "GunFire",
-    "fireTime" : 1.9,
-    "baseDps" : 5.4,
-    "energyUsage" : 40.0,
+    "fireTime" : 1.80,
+    "baseDps" : 8,
+    "energyUsage" : 25.0,
     "inaccuracy" : 0,
 
     "projectileCount" : 1,

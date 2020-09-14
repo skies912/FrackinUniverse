@@ -1,5 +1,6 @@
 --Modified bow shot ability that drains energy while drawing and holding, with configurable drain rates. Has an animation state for when arrows have been loosed
 require "/scripts/vec2.lua"
+require "/items/active/weapons/crits.lua"
 
 -- Bow primary ability
 NebBowShotElder = WeaponAbility:new()
@@ -9,7 +10,7 @@ function NebBowShotElder:init()
   self.energyPerShot = self.energyPerShot or 0
   self.drawTimer = 0
   
-  self.bonusSpeed = status.stat("bowDrawTimeBonus",0)
+  self.bonusSpeed = status.stat("bowDrawTimeBonus")
   self.drawTime = self.drawTime - self.bonusSpeed
   
   animator.setGlobalTag("drawFrame", "0")
@@ -61,7 +62,7 @@ function NebBowShotElder:reset()
 end
 
 function NebBowShotElder:draw()
-  self.energyBonus = status.stat("bowEnergyBonus") or 0
+  self.energyBonus = status.stat("bowEnergyBonus")
   
   self.weapon:setStance(self.stances.draw)
 
@@ -188,7 +189,7 @@ function NebBowShotElder:currentProjectileParameters()
   projectileParameters.speed = projectileParameters.speed * math.min(1, (self.drawTimer / self.drawTime)) * speedMultiplier
   
   --Bonus damage calculation for quiver users
-  local damageBonus = 1.0 + status.stat("bowDrawTimeBonus",0) --adds the bow draw bonus back to damage to keep it on par, otherwise we lose damage
+  local damageBonus = 1.0 + status.stat("bowDrawTimeBonus") --adds the bow draw bonus back to damage to keep it on par, otherwise we lose damage
   if self.useQuiverDamageBonus == true and status.statPositive("nebsrngbowdamagebonus") then
 		damageBonus = status.stat("nebsrngbowdamagebonus")
   end
@@ -207,7 +208,7 @@ function NebBowShotElder:currentProjectileParameters()
 		* (mcontroller.onGround() and 1 or (mcontroller.liquidMovement() and 1 or mcontroller.zeroG() and 1 or (self.airborneBonus + status.stat("bowAirBonus"))))
 		/ (self.projectileCount or 1)
   projectileParameters.powerMultiplier = activeItem.ownerPowerMultiplier()
-
+  projectileParameters.power = Crits.setCritDamage(self,projectileParameters.power)
   return projectileParameters
 end
 

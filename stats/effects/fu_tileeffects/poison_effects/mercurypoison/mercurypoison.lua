@@ -7,21 +7,23 @@ function init()
   
   effect.addStatModifierGroup({
       { stat = "fallDamageMultiplier", amount = -0.5 },
-      { stat = "cosmicResistance", amount = -0.25 },
+      { stat = "cosmicResistance", amount = -0.25*((status.statPositive("specialStatusImmunity") and 0.25) or 1) },
       { stat = "grit", effectiveMultiplier = 0 }
   })    
 end
 
 function setEffectTime()
-  return self.tickTimer * math.min(1 - status.stat("poisonResistance",0), 0.45)
+  return self.tickTimer * math.min(1 - status.stat("poisonResistance"), 0.45)
 end
 
 function activateVisualEffects()
   animator.setParticleEmitterOffsetRegion("drips", mcontroller.boundBox())
   animator.setParticleEmitterActive("drips", true)
+  if entity.entityType()=="player" then
   local statusTextRegion = { 0, 1, 0, 1 }
   animator.setParticleEmitterOffsetRegion("statustext", statusTextRegion)
   animator.burstParticleEmitter("statustext")
+  end
 end
 
 function deactivateVisualEffects()
@@ -34,7 +36,7 @@ function update(dt)
     self.tickTimer = self.tickTime
   end
 
-  if ( status.stat("poisonResistance",0)  >= 0.50 ) and ( status.stat("radioactiveResistance",0)  >= 0.25 ) then
+  if ( status.stat("poisonResistance")  >= 0.50 ) and ( status.stat("radioactiveResistance")  >= 0.25 ) then
     deactivateVisualEffects()
     effect.expire()
   end

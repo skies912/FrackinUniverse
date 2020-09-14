@@ -8,7 +8,7 @@
   "shortdescription" : "Crystalshard Staff",
   "category" : "staff",
   "twoHanded" : true,
-  "itemTags" : ["weapon","staff","upgradeableWeapon"],
+  "itemTags" : ["weapon","staff","upgradeableWeapon","cute","cosmic"],
   "tooltipKind" : "staff",
 
   "animation" : "/items/active/weapons/staff/staff.animation",
@@ -82,7 +82,7 @@
     "name" : "Crystal Blade",
     "projectileType" : "crystalblade",
     "projectileParameters" : {
-      "damageSourceKind" : "cosmic",
+      "damageKind" : "cosmic",
       "baseDamage" : 30
     }    
   },

@@ -22,19 +22,15 @@ function init()
 
   message.setHandler("restoreEnergy", function(_, _, base, percentage)
       if alive() then
-        setHealthValue()
         setEnergyValue()
-        local restoreAmount = (base or 0) + self.healthMax * (percentage or 0)
-        storage.health = math.min(storage.health + (restoreAmount*0.75), self.healthMax)
+        local restoreAmount = (base or 0) + self.energyMax * (percentage or 0)
+        storage.energy = math.min(storage.energy + (restoreAmount*0.75), self.energyMax)
         if self.driverId and world.entityType(self.driverId) == "player" then
 	  world.sendEntityMessage(self.ownerEntityId, "setQuestFuelCount", math.min(storage.energy + (restoreAmount * 0.15), self.energyMax))
 	end
         animator.playSound("restoreEnergy")
         if storage.energy > self.energyMax then
           storage.energy = self.energyMax
-        end
-        if storage.health > self.healthMax then
-          storage.health = self.healthMax
         end
       end
     end)
@@ -191,10 +187,11 @@ function init()
 
   --factor Mass into energy drain, as a penalty
   self.massTotal = (self.parts.body.stats.mechMass or 0) + (self.parts.booster.stats.mechMass or 0) + (self.parts.legs.stats.mechMass or 0) + (self.parts.leftArm.stats.mechMass or 0) + (self.parts.rightArm.stats.mechMass or 0)
-  self.massMod = self.massTotal/100
+  
+  self.massMod = self.massTotal/200
 
   --factor in module bonus/penalty
-  self.energyDrain = (self.energyDrain + self.massMod) * (self.fuelCost or 1)
+  self.energyDrain = (self.energyDrain * (1 + self.massMod)) * (self.fuelCost or 1)
 
   --end
 
@@ -293,17 +290,17 @@ end
 function setDefenseBoostValue()
   self.defenseboost = self.parts.hornName == 'mechdefensefield' or self.parts.hornName == 'mechdefensefield2' or self.parts.hornName == 'mechdefensefield3' or self.parts.hornName == 'mechdefensefield4' or self.parts.hornName == 'mechdefensefield5'
 	  if self.defenseboost then
-		if self.parts.hornName == 'mechdefensefield' then
-		  self.defenseBoost = 100
-		elseif self.parts.hornName == 'mechdefensefield2' then
-		  self.defenseBoost = 200
-		elseif self.parts.hornName == 'mechdefensefield3' then
-		  self.defenseBoost = 300
-		elseif self.parts.hornName == 'mechdefensefield4' then
-		  self.defenseBoost = 400
-		elseif self.parts.hornName == 'mechdefensefield5' then
-		  self.defenseBoost = 500
-		end
+  		if self.parts.hornName == 'mechdefensefield' then
+  		  self.defenseBoost = 50
+  		elseif self.parts.hornName == 'mechdefensefield2' then
+  		  self.defenseBoost = 100
+  		elseif self.parts.hornName == 'mechdefensefield3' then
+  		  self.defenseBoost = 150
+  		elseif self.parts.hornName == 'mechdefensefield4' then
+  		  self.defenseBoost = 200
+  		elseif self.parts.hornName == 'mechdefensefield5' then
+  		  self.defenseBoost = 250
+  		end
 	  else
 	    self.defenseBoost = 0
 	  end
@@ -313,15 +310,15 @@ function setEnergyBoostValue()
   self.energyboost = self.parts.hornName == 'mechenergyfield' or self.parts.hornName == 'mechenergyfield2' or self.parts.hornName == 'mechenergyfield3' or self.parts.hornName == 'mechenergyfield4' or self.parts.hornName == 'mechenergyfield5'
 	  if self.energyboost then
 		if self.parts.hornName == 'mechenergyfield' then
-		  self.energyBoost = 100
+		  self.energyBoost = 50
 		elseif self.parts.hornName == 'mechenergyfield2' then
-		  self.energyBoost = 200
+		  self.energyBoost = 100
 		elseif self.parts.hornName == 'mechenergyfield3' then
-		  self.energyBoost = 300
+		  self.energyBoost = 150
 		elseif self.parts.hornName == 'mechenergyfield4' then
-		  self.energyBoost = 400
+		  self.energyBoost = 200
 		elseif self.parts.hornName == 'mechenergyfield5' then
-		  self.energyBoost = 500
+		  self.energyBoost = 250
 		end
 	  else
 	    self.energyBoost = 0
@@ -395,9 +392,9 @@ end
 function setHealthValue()
   self.massTotal = (self.parts.body.stats.mechMass or 0) + (self.parts.booster.stats.mechMass or 0) + (self.parts.legs.stats.mechMass or 0) + (self.parts.leftArm.stats.mechMass or 0) + (self.parts.rightArm.stats.mechMass or 0)
   setDefenseBoostValue()
-  self.defenseModifier = (self.defenseBoost * self.massTotal) * 0.1
+  self.defenseModifier = self.defenseBoost + (self.massTotal*2) 
   setMassBoostValue()
-  self.healthMax = ((((100 * (self.parts.body.stats.healthBonus or 1)) + self.massTotal) * self.parts.body.stats.protection) + (self.defenseModifier or 0) ) + 150
+  self.healthMax = ((((150 * (self.parts.body.stats.healthBonus or 1)) + self.massTotal) * self.parts.body.stats.protection) + (self.defenseModifier or 0) )
   setMobilityBoostValue() --set other boosts while we are at it
   setFuelBoostValue() --set other boosts while we are at it
 end
@@ -408,7 +405,7 @@ function setEnergyValue()
   if self.massTotal > 22 then
     self.energyBoost = self.energyBoost * (self.massTotal/50)
   end
-  self.energyMax = ((100 + self.parts.body.energyMax)*(self.parts.body.stats.energyBonus or 1)) + (self.energyBoost or 0)
+  self.energyMax = ((50 + self.parts.body.energyMax)*(self.parts.body.stats.energyBonus or 1)) + (self.energyBoost or 0)
 end
 
 -- this function activates all the relevant stats that FU needs to call on for mech parts
@@ -608,7 +605,7 @@ function update(dt)
       -- end
  
       -- self.aimPosition = vehicle.aimPosition("seat")
-            self.aimPosition,newControls = readMechControls(newControls) -- NPC Mechs
+      self.aimPosition,newControls = readMechControls(newControls) -- NPC Mechs
  
       if newControls.Special1 and not self.lastControls.Special1 and storage.energy > 0 then
           if self.parts.hornName == 'mechaimassist' then
@@ -843,19 +840,20 @@ function update(dt)
   -- decay and check energy
   if self.driverId then
   --energy drain
-    local energyDrain = self.energyDrain
+    local energyDrain = self.energyDrain --base rate
  
-      --set energy drain x2 on manual flight mode
-      if self.flightMode and world.gravity(mcontroller.position()) == 0 then
+    --set energy drain x2 on manual flight mode
+    if self.flightMode and world.gravity(mcontroller.position()) == 0 then
         energyDrain = self.energyDrain
-      elseif self.flightMode and world.gravity(mcontroller.position()) ~= 0 then
+    elseif self.flightMode and world.gravity(mcontroller.position()) ~= 0 then --flying in Gravity takes x2 fuel
         energyDrain = self.energyDrain*2
-    elseif not self.flightMode and world.gravity(mcontroller.position()) ~= 0 then
-        energyDrain = self.energyDrain
+    elseif not self.flightMode and world.gravity(mcontroller.position()) ~= 0 then  --walking consumes less
+        energyDrain = self.energyDrain * 0.5--its rough, but it works. planet-based mechs consume 50% less energy
+                                            --since it requires extended periods of time, unlike mech missions
     end
  
     --set energy drain to 0 if null movement
-    if not hasTouched(newControls) and not hasTouched(oldControls) and not self.manualFlightMode then --(not hasFired) then
+    if not hasTouched(newControls) and not hasTouched(oldControls) and not self.manualFlightMode then
  
       eMult = vec2.mag(newVelocity) < 1.2 and 1 or 0 -- mag of vel in grav while idle = 1.188~
       eMult = eMult
@@ -864,15 +862,15 @@ function update(dt)
  
       if self.defenseboost then
         if self.parts.hornName == 'mechdefensefield' then
-          self.defenseBoost = 100
+          self.defenseBoost = 50
         elseif self.parts.hornName == 'mechdefensefield2' then
-          self.defenseBoost = 200
+          self.defenseBoost = 100
         elseif self.parts.hornName == 'mechdefensefield3' then
-          self.defenseBoost = 300
+          self.defenseBoost = 150
         elseif self.parts.hornName == 'mechdefensefield4' then
-          self.defenseBoost = 400
+          self.defenseBoost = 200
         elseif self.parts.hornName == 'mechdefensefield5' then
-          self.defenseBoost = 500
+          self.defenseBoost = 250
         end
       end
  
@@ -897,15 +895,15 @@ function update(dt)
  
       if self.energyboost then
         if self.parts.hornName == 'mechenergyfield' then
-          self.energyBoost = 100
+          self.energyBoost = 50
         elseif self.parts.hornName == 'mechenergyfield2' then
-          self.energyBoost = 200
+          self.energyBoost = 100
         elseif self.parts.hornName == 'mechenergyfield3' then
-          self.energyBoost = 300
+          self.energyBoost = 150
         elseif self.parts.hornName == 'mechenergyfield4' then
-          self.energyBoost = 400
+          self.energyBoost = 200
         elseif self.parts.hornName == 'mechenergyfield5' then
-          self.energyBoost = 500
+          self.energyBoost = 250
         end
       end
  
@@ -1097,34 +1095,32 @@ function update(dt)
  
     if math.floor(self.legCycle * 2) ~= math.floor(newLegCycle * 2) then
       triggerStepSound()
- 
       -- mech ground thump damage (FU)
       self.thumpParamsMini = {
         power = self.mechMass,
         damageTeam = {type = "friendly"},
-      actionOnReap = {
+        actionOnReap = {
           {
-        action='explosion',
-        foregroundRadius=2,
-        backgroundRadius=0,
-        explosiveDamageAmount= 0.25,
-        harvestLevel = 99,
-        delaySteps=2
+            action='explosion',
+            foregroundRadius=2,
+            backgroundRadius=0,
+            explosiveDamageAmount= 0.25,
+            harvestLevel = 99,
+            delaySteps=2
           }
         }
       }
- 
+      
       if self.mechMass > 8 then  -- 8 tonne minimum or tiles dont suffer at all.
         world.spawnProjectile("mechThump", mcontroller.position(), nil, {0,-6}, false, self.thumpParamsMini)
       end
- 
+      animator.burstParticleEmitter("legImpactLight")--little puffs of smoke for juicyness
     end
  
     self.legCycle = newLegCycle
   end
  
   -- animate legs, leg joints, and hips
- 
   if self.flightMode then
     -- legs stay locked in place for flight
   else
@@ -1309,7 +1305,7 @@ function update(dt)
       self.baseDamageMechfall = math.min(math.abs(mcontroller.velocity()[2]) * self.mechMass)/2
  
     if self.mechMass >= 15 and (self.baseDamageMechfall) >= 220 and (self.jumpBoostTimer) == 0 then    --mech takes damage from stomps
-      storage.health = math.max(0, storage.health - (self.baseDamage /200))
+      storage.health = math.max(0, storage.health - (self.baseDamage /100))
     end
  
     if self.mechMass > 0 and time <= 0 then
@@ -1330,13 +1326,13 @@ function update(dt)
         }
  
         if self.mechMass >= 20 then
-        thumpParamsBig.actionOnReap[1].foregroundRadius = thumpParamsBig.actionOnReap[1].foregroundRadius / (6 - (self.mechMass/24))
-        thumpParamsBig.actionOnReap[1].backgroundRadius = thumpParamsBig.actionOnReap[1].backgroundRadius / 6
-        thumpParamsBig.actionOnReap[1].explosiveDamageAmount = thumpParamsBig.actionOnReap[1].explosiveDamageAmount * 1.5
+          thumpParamsBig.actionOnReap[1].foregroundRadius = thumpParamsBig.actionOnReap[1].foregroundRadius / (6 - (self.mechMass/24))
+          thumpParamsBig.actionOnReap[1].backgroundRadius = thumpParamsBig.actionOnReap[1].backgroundRadius / 6
+          thumpParamsBig.actionOnReap[1].explosiveDamageAmount = thumpParamsBig.actionOnReap[1].explosiveDamageAmount * 1.5
         elseif self.mechMass >= 11 then
-        thumpParamsBig.actionOnReap[1].foregroundRadius = thumpParamsBig.actionOnReap[1].foregroundRadius / 7.4
+          thumpParamsBig.actionOnReap[1].foregroundRadius = thumpParamsBig.actionOnReap[1].foregroundRadius / 7.4
         else
-        thumpParamsBig.actionOnReap[1].foregroundRadius = thumpParamsBig.actionOnReap[1].foregroundRadius / 10
+          thumpParamsBig.actionOnReap[1].foregroundRadius = thumpParamsBig.actionOnReap[1].foregroundRadius / 10
         end
  
         world.spawnProjectile("mechThumpLarge", mcontroller.position(), nil, {3,-6}, false, thumpParamsBig)
@@ -1388,9 +1384,7 @@ function applyDamage(damageRequest)
 
   self.massProtection = self.parts.body.stats.protection * ((self.parts.body.stats.mechMass)/10)
   self.rand= math.random(10)
-  if (self.parts.body.stats.protection) >=4
-    and (energyLost) <= (self.massProtection)
-    and (self.rand) <= 1 then
+  if (self.parts.body.stats.protection >=4) and (energyLost <= self.massProtection) and (self.rand <= 1) then
       energyLost = 0
       animator.playSound("landingThud")
       animator.burstParticleEmitter("blockDamage")

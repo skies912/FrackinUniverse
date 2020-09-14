@@ -1,3 +1,5 @@
+require "/scripts/effectUtil.lua"
+
 function init()
   animator.setParticleEmitterOffsetRegion("drips", mcontroller.boundBox())
   animator.setParticleEmitterActive("drips", true) 
@@ -5,13 +7,7 @@ function init()
 end
 
 function update(dt)
-
-local distanceFromEntity = world.entityQuery(mcontroller.position(),4)
-  if (status.stat("iceResistance")<0.75)
-	  for key, value in pairs(distanceFromEntity) do
-	   world.sendEntityMessage(value,"applyStatusEffect","slow")
-	  end  
-  end
+	effectUtil.effectAllEnemiesInRange("icySlow",6,1)
 end
 
 function uninit()

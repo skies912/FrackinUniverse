@@ -6,7 +6,7 @@ function init()
   self.energyCostPerSecond = config.getParameter("energyCostPerSecond")
   self.active=false
   self.available = true
-  self.species = world.entitySpecies(entity.id())
+  --self.species = world.entitySpecies(entity.id())
   self.firetimer = 0
   checkFood()
 end
@@ -48,7 +48,7 @@ end
 
 
 function applyTechBonus()
-  self.bonusDamage = 1 + status.stat("bombtechBonus",0) -- apply bonus from certain items and armor
+  self.bonusDamage = 1 + status.stat("bombtechBonus") -- apply bonus from certain items and armor
 end
 
 function update(args)

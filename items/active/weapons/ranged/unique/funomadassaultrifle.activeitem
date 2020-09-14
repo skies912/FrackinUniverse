@@ -12,13 +12,14 @@
   "level" : 3,
   "tooltipKind" : "gun2",
   "weaponType" : "assaultRifle",
-  "itemTags" : ["weapon","ranged","assaultrifle", "energy", "densinium", "upgradeableWeapon"],
+  "itemTags" : ["weapon","ranged","assaultrifle", "energy", "upgradeableWeapon"],
   "twoHanded" : true,
 
   "animation" : "/items/active/weapons/ranged/unique/fugun.animation",
   "animationParts" : {
     "butt" : "",
     "middle" : "nomadassaultrifle.png",
+    "middlefullbright" : "",
     "barrel" : "",
     "muzzleFlash" : "/animations/muzzleflash/protomuzzle.png"
   },

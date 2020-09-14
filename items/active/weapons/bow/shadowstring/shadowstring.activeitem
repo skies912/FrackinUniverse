@@ -9,13 +9,13 @@
   "description" : "The darkest bow on the market",
   "shortdescription" : "Shadowstring",
   "twoHanded" : true,
-  "itemTags" : ["weapon", "ranged", "bow","upgradeableWeapon"],
+  "itemTags" : ["weapon", "ranged", "bow","upgradeableWeapon","shadow"],
 
   "radioMessagesOnPickup" : [ "pickupbow" ],
 
   "level" : 5,
 
-  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animation" : "/items/active/weapons/bow/fubow.animation",
   "animationParts" : {
     "bow" : "shadowstringfull.png"
   },

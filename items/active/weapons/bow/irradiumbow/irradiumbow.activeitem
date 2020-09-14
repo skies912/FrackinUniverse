@@ -9,13 +9,13 @@
   "description" : "Radioactive Hunting",
   "shortdescription" : "Irradium Bow",
   "twoHanded" : true,
-  "itemTags" : ["weapon", "ranged", "bow","upgradeableWeapon"],
+  "itemTags" : ["weapon", "ranged", "bow","upgradeableWeapon","irradium","radioactive"],
 
   "radioMessagesOnPickup" : [ "pickupbow" ],
 
   "level" : 4,
 
-  "animation" : "/items/active/weapons/bow/bow.animation",
+  "animation" : "/items/active/weapons/bow/fubow.animation",
   "animationParts" : {
     "bow" : "irradiumbowfull.png"
   },

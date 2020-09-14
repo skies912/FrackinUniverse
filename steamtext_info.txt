@@ -23,6 +23,7 @@ or its git link - https://github.com/xn-5o8h/FUSAILModdedRaceSupport
 
 [b]If using *modded* races, you will want the FU BYOS addon here https://steamcommunity.com/sharedfiles/filedetails/?id=1194878261&searchtext=FU+BYOS[/b]
 
+[b]Avali Triage[/b] Players will require this: https://steamcommunity.com/sharedfiles/filedetails/?id=2052758462 
 
 [img]http://sayterdarkwynd.github.io/images/fu/whatis.png[/img]
 

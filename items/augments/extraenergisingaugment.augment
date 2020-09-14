@@ -5,8 +5,8 @@
   "tooltipKind" : "eppaugment",
   "category" : "eppAugment",
   "inventoryIcon" : "extraenergisingaugment.png",
-  "description" : "+^#c459c9;25%^reset; Max Energy
-+^cyan;15%^reset; Recharge Time
+  "description" : "Energy x^green;1.25^reset;
+Energy Block Time x^green;0.85^reset;
 ^yellow;Large energy regen boost^reset;",
   "shortdescription" : "Energising Augment",
 

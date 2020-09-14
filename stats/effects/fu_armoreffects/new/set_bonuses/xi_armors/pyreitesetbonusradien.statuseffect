@@ -1,6 +1,6 @@
 {
   "name" : "pyreitesetbonusradien",
-  "defaultDuration" : 15,
+  "defaultDuration" : 3,
 
   "effectConfig" : {
     "armorBonuses" : {
@@ -13,7 +13,9 @@
       "slushslowImmunity" : { "amount" : 1 },
       "fireStatusImmunity" : { "amount" : 1 },
       "biomeradiationImmunity" : { "amount" : 1 },
-      "ffextremeradiationImmunity" : { "amount" : 1 }
+      "radburnImmunity" : { "amount" : 1 },
+      "ffextremeradiationImmunity" : { "amount" : 1 },
+      "sulphuricImmunity" : { "amount" : 1 }
     },
     "armorMovementModifiers" : {
       "speed" : 1.05
@@ -29,7 +31,7 @@
       }
     ],
 
-    "biomeTags" : [ "garden", "forest" ],
+    "biomeTags" : [ "sulphuric", "sulphuricdark", "sulphuricocean" ],
     "biomeBonuses" : {
       "grit" : { "amount" : 0.05 },
       "maxEnergy" : { "effectiveMultiplier" : 1.05 }
@@ -39,8 +41,5 @@
   "scripts" : [
     "/stats/effects/fu_armoreffects/new/BasicSetBonus.lua"
   ],
-  "scriptDelta": 5,
-
-  "label" : "+5% Speed & +7% Dmg. X'i Weapons: +10% Protection. Sulphuric: +5% Energy and Knockback Resist. Immune to ice, breathing,snow, slush, fire and most radiation.",
-  "icon" : "/interface/statuses/set_bow.png"
+  "scriptDelta": 5
 }

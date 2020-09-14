@@ -1,8 +1,13 @@
 [
 {
-"op": "add",
-"path": "/disc_attack",
-"value": {
+    "op": "add",
+    "path": "/mechbattery/collisionEnabled",
+    "value": false
+},
+{
+    "op": "add",
+    "path": "/disc_attack",
+    "value": {
     "mass" : 1.0,
     "gravityMultiplier" : 0.3,
     "bounceFactor" : 0.04,
@@ -75,7 +80,27 @@
     "maximumCorrection" : 0.75
   }
 },
-  
+
+{
+"op": "add",
+"path": "/fufloatybomb",
+"value": {
+    "mass" : 1.0,
+    "gravityMultiplier" : 0.0,
+    "bounceFactor" : 0.0,
+    "stopOnFirstBounce" : true,
+    "maxMovementPerStep" : 0.4,
+
+    "collisionPoly" : [ [-0.25, -0.25], [0.25, -0.25], [0.25, 0.25], [-0.25, 0.25] ],
+    "ignorePlatformCollision" : true,
+
+    "airFriction" : 0.0,
+    "liquidFriction" : 8.0,
+    "groundFriction" : 15.0,
+    "maximumCorrection" : 0.75
+  }
+},
+
 {
 "op": "add",
 "path": "/harpoon",

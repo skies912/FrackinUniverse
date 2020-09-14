@@ -60,7 +60,7 @@
     "energyUsage" : 10,
     "inaccuracy" : 0,
 
-    "projectileType" : "invisibletentaclefist",
+    "projectileType" : "invisibleicetentaclefist",
     "projectileParameters" : {
       "controlForce":350,
       "targetTrackingForce":0,
@@ -71,7 +71,7 @@
       "speed" : 90,
       "bounces":-1, 
       "timeToLive" : 0.8, 
-      "damageSourceKind" : "iceplasma",
+      "damageKind" : "iceplasma",
       
       "statusEffects" : [ ],
       

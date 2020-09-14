@@ -2442,6 +2442,7 @@
 		"protoweather",
 		"gasworld1",
 		"gasworld2",
+		"gasworld3",
 		"radioactiveweathernew",
 		"poisonweathernew",
 		"poisonweathernewbiome",
@@ -2491,9 +2492,6 @@
 		"desertweathernew",
 		"jungleheatweather",
 		"protoweather",
-		"gasworld1",
-		"gasworld2",
-		"gasworld3",
 		"radioactiveweathernew",
 		"poisonweathernew",
 		"poisonweathernewbiome",
@@ -2503,11 +2501,8 @@
 		"coldweathernew",
 		"ffbiomecold0",
 		"ffbiomecold1",
-		"ffbiomecold2",
-		"ffbiomecold3",
 		"biomeheat",
 		"ffbiomeheat1",
-		"ffbiomeheat2",
 		"heatweathernew"
 	      ]
 	    },
@@ -2537,9 +2532,8 @@
 		"desertweathernew",
 		"jungleheatweather",
 		"protoweather",
-		"gasworld1",
-		"gasworld2",
 		"radioactiveweathernew",
+		"radioactiveweathernew2",
 		"poisonweathernew",
 		"poisonweathernewbiome",
 		"biomepoisongas",
@@ -2548,10 +2542,9 @@
 		"coldweathernew",
 		"ffbiomecold0",
 		"ffbiomecold1",
+		"ffbiomecold2",
 		"biomeheat",
 		"ffbiomeheat1",
-		"ffbiomeheat2",
-		"ffbiomeheat3",
 		"heatweathernew"
 	      ]
 	    },
@@ -2585,6 +2578,8 @@
 		"gasworld2",
 		"gasworld3",
 		"radioactiveweathernew",
+		"radioactiveweathernew2",
+		"radioactiveweathernew3",
 		"poisonweathernew",
 		"poisonweathernewbiome",
 		"biomepoisongas",
@@ -2635,6 +2630,7 @@
 		"protoweather",
 		"gasworld1",
 		"gasworld2",
+		"gasworld3",
 		"radioactiveweathernew",
 		"poisonweathernew",
 		"poisonweathernewbiome",
@@ -2644,6 +2640,7 @@
 		"coldweathernew",
 		"ffbiomecold0",
 		"ffbiomecold1",
+		"ffbiomecold2",
 		"biomeheat",
 		"ffbiomeheat1",
 		"ffbiomeheat2",
@@ -2676,8 +2673,6 @@
 						"desertweathernew",
 						"jungleheatweather",
 						"protoweather",
-						"gasworld1",
-						"gasworld2",
 						"radioactiveweathernew",
 						"poisonweathernew",
 						"poisonweathernewbiome",
@@ -2721,9 +2716,6 @@
 						"protoweather",
 						"sulphuricweathernew",
 						"sulphuricweatherstorm",
-						"gasworld1",
-						"gasworld2",
-						"gasworld3",
 						"biomeradiation",
 						"radioactiveweathernew",
 						"radioactiveweathernew2",
@@ -2738,6 +2730,7 @@
 						"biomeheat",
 						"ffbiomeheat1",
 						"ffbiomeheat2",
+						"ffbiomeheat3",
 						"heatweathernew"
 	      ]
 	    },
@@ -2770,9 +2763,6 @@
 						"protoweather",
 						"sulphuricweathernew",
 						"sulphuricweatherstorm",
-						"gasworld1",
-						"gasworld2",
-						"gasworld3",
 						"biomeradiation",
 						"radioactiveweathernew",
 						"radioactiveweathernew2",
@@ -2845,6 +2835,7 @@
 				"biomeheat",
 				"ffbiomeheat1",
 				"ffbiomeheat2",
+				"ffbiomeheat3",
 				"heatweathernew2",
 				"heatweathernew"
 				],
@@ -2883,8 +2874,6 @@
 						"protoweather",
 						"sulphuricweathernew",
 						"sulphuricweatherstorm",
-						"gasworld1",
-						"gasworld2",
 						"biomeradiation",
 						"radioactiveweathernew",
 						"poisonweathernew",
@@ -2929,9 +2918,6 @@
 		"protoweather",
 		"sulphuricweathernew",
 		"sulphuricweatherstorm",
-		"gasworld1",
-		"gasworld2",
-		"gasworld3",
 		"biomeradiation",
 		"radioactiveweathernew",
 		"radioactiveweathernew2",
@@ -3087,8 +3073,6 @@
  		"desertweathernew",
 		"jungleheatweather",
 		"protoweather",
-		"gasworld1",
-		"gasworld2",
 		"radioactiveweathernew",
 		"poisonweathernew",
 		"poisonweathernewbiome",
@@ -3154,7 +3138,7 @@
 	      "energy" : 3,
 	      "protection" : 1,
 	      "mechMass" : 2,
-	      "energyBonus" : 1.5
+	      "energyBonus" : 1.2
 	    },
 	    "partParameters" : {
 	      "hazardImmunities" : [
@@ -3183,7 +3167,7 @@
 	      "energy" : 7,
 	      "protection" : 3,
 	      "mechMass" : 4,
-	      "energyBonus" : 1.5
+	      "energyBonus" : 1.25
 	    },
 	    "partParameters" : {
 	      "hazardImmunities" : [
@@ -3258,13 +3242,9 @@
 		"ffbiomecold3",
 		"biomeheat",
 		"ffbiomeheat1",
-		"ffbiomeheat2",
-		"ffbiomeheat3",
 		"heatweathernew"
 		],
 		"liquidImmunities": {
-			"fuironliquid": true,
-			"lava": true,
 			"liquidnitrogen": true
 		}
 	    },
@@ -3294,10 +3274,8 @@
  		"desertweathernew",
 		"jungleheatweather",
 		"protoweather",
-		"gasworld1",
-		"gasworld2",
-		"gasworld3",
 		"radioactiveweathernew",
+		"radioactiveweathernew2",
 		"poisonweathernew",
 		"poisonweathernewbiome",
 		"biomepoisongas",
@@ -3307,7 +3285,6 @@
 		"ffbiomecold0",
 		"ffbiomecold1",
 		"ffbiomecold2",
-		"ffbiomecold3",
 		"biomeheat",
 		"ffbiomeheat1",
 		"ffbiomeheat2",
@@ -3381,14 +3358,25 @@
  		"desertweathernew",
 		"jungleheatweather",
 		"protoweather",
+		"protoweather2",
+		"aetherweathernew",
+		"sulphuricweathernew",
+		"sulphuricweathernew2",
+		"sulphuricweatherstorm",
+		"sulphuricweatherstorm2",
 		"gasworld1",
 		"gasworld2",
 		"gasworld3",
 		"radioactiveweathernew",
+		"radioactiveweathernew2",
+		"radioactiveweathernew3",
+		"poisonweathernewbiome",
 		"poisonweathernew",
 		"poisonweathernewbiome",
 		"biomepoisongas",
 		"biomepoison1",
+		"biomepoison2",
+		"biomepoison3",
 		"biomecold",
 		"coldweathernew",
 		"ffbiomecold0",
@@ -3509,8 +3497,6 @@
 				}
 			}
 		},
-
-
 		{"op":"add","path":"/sinbody","value":
 		  {
 		    "stats" : {
@@ -3527,9 +3513,6 @@
 			"protoweather",
 			"sulphuricweathernew",
 			"sulphuricweatherstorm",
-			"gasworld1",
-			"gasworld2",
-			"gasworld3",
 			"biomeradiation",
 			"radioactiveweathernew",
 			"radioactiveweathernew2",
@@ -3557,7 +3540,165 @@
 		    "animationCustom" : {}
 		  }
 
-		}
+		},
+
+    {
+    "op" : "add",
+    "path" : "/pandorasboxpenguinproto",
+    "value" : {
+      "stats" : {
+        "energy" : 3,
+        "protection" : 3,
+        "mechMass" : 4,
+    "healthBonus" : 1.14,
+    "energyBonus" : 0.9
+      },
+      "partParameters" : {
+        "hazardImmunities" : [
+        "desertweathernew",
+        "jungleheatweather",
+        "protoweather",
+        "radioactiveweathernew",
+        "poisonweathernew",
+        "poisonweathernewbiome",
+        "biomepoisongas",
+        "biomepoison1",
+        "biomecold",
+        "coldweathernew",
+        "ffbiomecold0",
+        "ffbiomecold1",
+        "ffbiomecold2",
+        "ffbiomecold3",
+        "biomeheat",
+        "ffbiomeheat1",
+        "ffbiomeheat2",
+        "heatweathernew"
+    ],
+    "liquidImmunities": {
+      "liquidnitrogen": true
+    }
+      },
+      "partImages" : {
+        "bodyBack" : "body/fuOrbus_back.png",
+        "bodyFront" : "body/fuOrbus_front.png",
+        "bodyFullbright" : "body/fuOrbus_fullbright.png"
+      },
+      "defaultPrimaryColors" : ["e7e7e7", "b7b7b7", "7c7c7c", "383838"],
+      "defaultSecondaryColors" : ["838383", "555555", "383838", "151515"],
+      "animationCustom" : {}
+      }
+    }, 
+  {
+    "op": "add",
+    "path": "/pandorasboxsheyeproto",
+    "value": {
+      "stats": {
+        "energy": 3,
+        "protection": 3,
+        "mechMass" : 4,
+        "healthBonus" : 0.85,
+        "energyBonus" : 1.2
+      },
+      "partParameters": {},
+      "partImages": {
+        "bodyFront": "body/pandorasboxsheyeproto_front.png"
+      },
+      "defaultPrimaryColors": [
+        "9b5c71",
+        "7b3f54",
+        "5f2738",
+        "3d1528"
+      ],
+      "defaultSecondaryColors": [
+        "e6e6e6",
+        "b6b6b6",
+        "7b7b7b",
+        "373737"
+      ],
+      "animationCustom": {
+        "animatedParts": {
+          "parts": {
+            "bodyFront": {
+              "properties": {
+                "sitPosition": [
+                  0.2,
+                  0.4
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "op": "add",
+    "path": "/pandorasboxsheye",
+    "value": {
+      "stats": {
+        "energy": 5,
+        "protection": 5,
+        "mechMass" : 6,
+        "healthBonus" : 0.85,
+        "energyBonus" : 1.2       
+      },
+      "partParameters": {
+        "hazardImmunities": [
+        "desertweathernew",
+        "jungleheatweather",
+        "gasworld1",
+        "gasworld2",
+        "gasworld3",
+        "radioactiveweathernew",
+        "poisonweathernew",
+        "poisonweathernewbiome",
+        "biomepoisongas",
+        "biomepoison1",
+        "biomecold",
+        "coldweathernew",
+        "ffbiomecold0",
+        "ffbiomecold1",
+        "ffbiomecold2",
+        "ffbiomecold3",
+        "biomeheat",
+        "ffbiomeheat1",
+        "ffbiomeheat2",
+        "ffbiomeheat3",
+        "heatweathernew"
+        ]
+      },
+      "partImages": {
+        "bodyFront": "body/pandorasboxsheye_front.png",
+        "bodyFullbright": "body/pandorasboxsheye_fullbright.png"
+      },
+      "defaultPrimaryColors": [
+        "9b5c71",
+        "7b3f54",
+        "5f2738",
+        "3d1528"
+      ],
+      "defaultSecondaryColors": [
+        "e6e6e6",
+        "b6b6b6",
+        "7b7b7b",
+        "373737"
+      ],
+      "animationCustom": {
+        "animatedParts": {
+          "parts": {
+            "bodyFront": {
+              "properties": {
+                "sitPosition": [
+                  0.2,
+                  0.4
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }       
 	],
 
 
